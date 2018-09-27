@@ -21,26 +21,26 @@ void loop()
   Serial.println(jump_value);
   Serial.println(down_value);
 
-  if(jump_value<=650){
+  if(jump_value>=650){//점프함
         if(!jump_flag){
           //함수호출
         }
         jump_flag = true;
-        digitalWrite(LED_PIN1, HIGH);
+        digitalWrite(LED_PIN1, LOW);
   }else{
         jump_flag = false;
-        digitalWrite(LED_PIN1, LOW);
+        digitalWrite(LED_PIN1, HIGH);
   }
 
-  if(down_value<=120){
+  if(down_value>=120){//숙임
         if(!down_flag){
           //함수호출
         }
         down_flag = true;
-        digitalWrite(LED_PIN2, HIGH);
-  }else{
-        down_flag = false;
         digitalWrite(LED_PIN2, LOW);
+  }else{
+         down_flag = false;
+         digitalWrite(LED_PIN2, HIGH);
   }
 
 
